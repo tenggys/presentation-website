@@ -1,0 +1,155 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.bg {
+    background-image: url(/img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.header {
+    padding: 20px 10px;
+
+    &__flex {
+        @include flex-between;
+    }
+
+    &__logo {
+        width: 60px;
+        height: 60px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+        }
+    }
+
+    &__list {
+        @include flex-between;
+        gap: 35px;
+    }
+
+    &__link {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        @include text(600, 18px, 100%, $textWhite);
+
+        &:hover {
+            color: $textBlue;
+        }
+    }
+
+    &__button {
+        background: $bgBlue;
+        padding: 15px;
+        border-radius: 15px;
+        border: none;
+        transition: all 0.3s ease;
+        @include text(400, 14px, 100%, $textWhite);
+        text-transform: uppercase;
+
+        &:hover {
+            background: $bgGray;
+            transform: scale(1.05);
+            background: $bgGray;
+            color: $textBlack;
+        }
+    }
+}
+
+.promo {
+    margin-bottom: $marginSection;
+}
+
+.about {
+    margin-bottom: $marginSection;
+
+    &__flex {
+        @include flex-center;
+        flex-direction: column;
+    }
+
+    &__heading {
+        margin-bottom: $marginHeading;
+        @include text(600, 40px, 100%, $textWhite);
+    }
+
+    &__box {
+        @include flex-wrap;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: $marginBlock;
+    }
+
+    &__item {
+        padding: 20px;
+        border: $borderItem;
+        border-radius: 30px;
+        background: $bgItem;
+        box-shadow: $itemShadow;
+        width: calc(40% - 15px);
+        max-width: calc(40% - 15px);
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            background: $bgItemHover;
+        }
+    }
+
+    &__title {
+        margin-bottom: $marginTitle;
+        @include text(600, 21px, 100%, $textWhite);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        li {
+            @include text(400, 18px, 100%, $textGray);
+        }
+    }
+}
