@@ -3,6 +3,7 @@ $textWhite: #ffff;
 $textBlue: #4369e7;
 $textGray: #d4d0d0;
 $textBlack: black;
+$textFooter: #666;
 
 //ФОН
 $bgBlue: #4369e7;
@@ -16,7 +17,12 @@ $itemShadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 $borderItem: 1px solid rgba(255, 255, 255, 0.3);
 
 //РАЗМЕРЫ
-$marginSection: 40px;
-$marginHeading: 30px;
-$marginBlock: 30px;
-$marginTitle: 10px;
+$marginSection: 60px;
+$marginHeading: 40px;
+$marginBlock: 60px;
+$marginTitle: 12px;
+
+// input/textarea
+$borderInput: 1px solid rgba(255, 255, 255, 0.3);
+$bgInput: rgba(124, 143, 205, 0.2);
+$shadowInput: 0 10px 30px rgba(0, 0, 0, 0.1);

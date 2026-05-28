@@ -8,7 +8,7 @@
 }
 
 body {
-    user-select: none;
+    //user-select: none;
 }
 
 a {
@@ -19,6 +19,14 @@ ul {
     list-style-type: none;
 }
 
+hr {
+    width: 100%;
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(181, 181, 181, 0.3), #4369e7, rgba(181, 181, 181, 0.3), transparent);
+    margin-bottom: 15px;
+}
+
 button {
     cursor: pointer;
 }
@@ -26,6 +34,7 @@ button {
 .container {
     max-width: 1140px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 .bg {
@@ -42,7 +51,7 @@ button {
 }
 
 .header {
-    padding: 20px 10px;
+    padding: 20px 0;
 
     &__flex {
         @include flex-between;
@@ -104,7 +113,10 @@ button {
 .about {
     margin-bottom: $marginSection;
 
-    &__flex {
+    &__stack,
+    &__experience,
+    &__direction {
+        margin-bottom: $marginBlock;
         @include flex-center;
         flex-direction: column;
     }
@@ -112,13 +124,13 @@ button {
     &__heading {
         margin-bottom: $marginHeading;
         @include text(600, 40px, 100%, $textWhite);
+        text-align: center
     }
 
     &__box {
         @include flex-wrap;
         gap: 15px;
         justify-content: center;
-        margin-bottom: $marginBlock;
     }
 
     &__item {
@@ -146,10 +158,275 @@ button {
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        gap: 12px;
 
         li {
             @include text(400, 18px, 100%, $textGray);
+        }
+
+        &--experience,
+        &--direction {
+            width: 79%;
+            padding: 40px;
+            border: $borderItem;
+            border-radius: 30px;
+            background: $bgItem;
+            box-shadow: $itemShadow;
+            list-style-type: circle;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.02);
+                background: $bgItemHover;
+            }
+        }
+    }
+}
+
+.work {
+    margin-bottom: $marginSection;
+
+    &__flex {
+        @include flex-center;
+        flex-direction: column;
+    }
+
+    &__heading {
+        margin-bottom: $marginHeading;
+        @include text(600, 40px, 100%, $textWhite);
+        text-align: center
+    }
+
+    &__block {
+        margin-bottom: $marginBlock;
+        width: 79%;
+        padding: 40px;
+        border: $borderItem;
+        border-radius: 30px;
+        background: $bgItem;
+        box-shadow: $itemShadow;
+        list-style-type: circle;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            background: $bgItemHover;
+        }
+    }
+
+    &__title {
+        margin-bottom: $marginTitle;
+        @include text(600, 21px, 100%, $textWhite);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px; 
+
+        li {
+            @include text(400, 18px, 100%, $textGray);
+        }
+    }
+}
+
+.cases {
+    margin-bottom: $marginSection;
+
+    &__heading {
+        margin-bottom: $marginHeading;
+        @include text(600, 40px, 100%, $textWhite);
+        text-align: center;
+    }
+}
+
+.contacts {
+    margin-bottom: $marginSection;
+
+    &__heading {
+        margin-bottom: $marginHeading;
+        @include text(600, 40px, 100%, $textWhite);
+        text-align: center;
+    }
+
+    &__box {
+        @include flex-center;
+        align-items: normal;
+        gap: 20px;
+    }
+
+    &__left {
+        padding: 15px 10px;
+        @include flex-center;
+        justify-content: flex-start;
+        flex-direction: column;
+        border: $borderItem;
+        border-radius: 12px;
+        background: $bgItem;
+        box-shadow: $itemShadow;
+    }
+
+    &__img {
+        margin-bottom: 15px;
+        width: 90px;
+        border-radius: 50px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 15px 15px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include text(400, 18px, 100%, $textWhite);
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $textBlue;
+        }
+    }
+
+    &__author {
+        @include text(400, 18px, 100%, $textWhite);
+    }
+
+    &__right {
+        width: 40%;
+        max-width: 40%;
+        padding: 30px;
+        border: $borderItem;
+        border-radius: 12px;
+        background: $bgItem;
+        box-shadow: $itemShadow;
+    }
+
+    &__form {
+        @include flex-center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__field {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        label {
+            @include text(400, 18px, 100%, $textWhite);
+        }
+
+        span {
+            color: $textBlue;
+        }
+
+        input {
+            color: #fff;
+            padding: 12px;
+            border-radius: 5px;
+            @include text(400, 18px, 100%, $textWhite);
+            outline: none;
+            transition: border-color 0.3s;
+            border: $borderInput;
+            border-radius: 12px;
+            background: $bgInput;
+            box-shadow: $shadowInput;
+
+            &:focus {
+                border-color: #4369e7;
+            }
+        }
+
+        textarea {
+            @include text(400, 18px, 100%, $textWhite);
+            padding: 12px;
+            border-radius: 5px;
+            min-height: 80px;
+            resize: none;
+            border: $borderInput;
+            border-radius: 12px;
+            background: $bgInput;
+            box-shadow: $shadowInput;
+
+            &:focus {
+                border: #4369e7;
+            }
+        }
+    }
+
+    &__button {
+        @include text(400, 18px, 100%, $textWhite);
+        padding: 13px 30px;
+        background: $bgBlue;
+        border-radius: 15px;
+        border: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $textBlack;
+            background: $bgGray;
+        }
+    }
+
+    &__text {
+        @include text(400, 18px, 100%, $textWhite);
+    }
+}
+
+.footer {
+    padding: 60px 0;
+    background-image: url(/img/footer-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__flex {
+        @include flex-between;
+        align-items: flex-start;
+    }
+
+    &__title {
+        @include text(500, 22px, 100%, $textBlack);
+        margin-bottom: $marginTitle;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        li {
+            cursor: pointer;
+            @include text(400, 18px, 100%, $textFooter);
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $textBlue;
+            }
+        }
+        
+    }
+
+    &__block-right {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @include text(400, 18px, 100%, $textFooter);
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $textBlue;
         }
     }
 }
