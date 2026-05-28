@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-body {
-    //user-select: none;
-}
-
 a {
     text-decoration: none;
 }
@@ -52,6 +48,7 @@ button {
 
 .header {
     padding: 20px 0;
+    margin-bottom: $marginBlock;
 
     &__flex {
         @include flex-between;
@@ -104,10 +101,6 @@ button {
             color: $textBlack;
         }
     }
-}
-
-.promo {
-    margin-bottom: $marginSection;
 }
 
 .about {
@@ -224,7 +217,7 @@ button {
         flex-direction: column;
         gap: 12px; 
 
-        li {
+        li, a {
             @include text(400, 18px, 100%, $textGray);
         }
     }
@@ -237,6 +230,157 @@ button {
         margin-bottom: $marginHeading;
         @include text(600, 40px, 100%, $textWhite);
         text-align: center;
+    }
+
+    &__box {
+        @include flex-center;
+        align-items: normal;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__item:first-child {
+        max-width: 100%;
+        width: auto;
+        flex-basis: 100%;
+    }
+
+    &__item {
+        padding: 22px;
+        border: $borderItem;
+        border-radius: 12px;
+        background: $bgItem;
+        box-shadow: $itemShadow;
+        transition: all 0.3s ease;
+        max-width: calc(34% - 30px);
+        width: calc(34% - 30px);
+        flex-basis: calc(34% - 30px);
+
+        &:hover {
+            transform: scale(1.02);
+            background: $bgItemHover;
+        }
+    }
+
+    &__link-flagman {
+        @include text(500, 24px, 100%, $textWhite);
+        padding: 9px 18px;
+        background: $bgBlue;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: $textBlack;
+            background: $bgGray;
+        }
+    }
+
+    &__img-flagman {
+        height: 640px;
+        width: 100%;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        object-fit: cover;
+        object-position: top;
+        margin-top: 20px;
+    }
+
+    &__element-flagman{
+        @include text(400, 18px, 100%, $textGray);
+        position: relative;
+        padding-left: 42px;
+        list-style: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath d="M9 19.414l-6.707-6.707 1.414-1.414L9 16.586 20.293 5.293l1.414 1.414" fill="%234369e7"/%3E%3C/svg%3E');
+            background-size: 35px;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 2;
+            filter: drop-shadow(0 0 5px rgba(67, 105, 231, 0.5)) drop-shadow(0 0 10px rgba(67, 105, 231, 0.3)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.2));
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid #4369e7;
+            box-shadow: 0 2px 5px rgba(67, 105, 231, 0.2), 0 0 5px rgba(67, 105, 231, 0.5), 0 0 10px rgba(67, 105, 231, 0.3), 0 0 15px rgba(255, 255, 255, 0.2);
+            background: transparent;
+            z-index: 1;
+        }
+    }
+
+    &__title-flagman {
+        @include text(700, 22px, 100%, $textWhite);
+        margin-bottom: 15px;
+    }
+
+    &__subtitle-flagman {
+        margin-bottom: 20px;
+        @include text(600, 22px, 100%, $textWhite);
+    }
+
+    &__text-flagman {
+        @include text(500, 20px, 135%, $textGray);
+    }
+
+    &__list-flagman {
+        display: flex;
+        flex-direction: column;
+        gap: 25px; 
+        margin-bottom: 15px;
+
+        li {
+            @include text(400, 18px, 100%, $textGray);
+        }
+        
+    }
+
+    &__href-flagman {
+        @include text(700, 18px, 100%, $textWhite);
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: $textBlue;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 200px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 22px 15px 22px;
+    }
+
+    &__title {
+        @include text(500, 22px, 100%, $textWhite);
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        @include text(500, 18px, 135%, $textGray);
     }
 }
 
@@ -270,6 +414,11 @@ button {
         margin-bottom: 15px;
         width: 90px;
         border-radius: 50px;
+    }
+
+    &__title {
+        @include text(600, 21px, 100%, $textWhite);
+        margin-bottom: 15px;
     }
 
     &__content {
@@ -373,7 +522,7 @@ button {
         }
     }
 
-    &__text {
+    &__message {
         @include text(400, 18px, 100%, $textWhite);
     }
 }

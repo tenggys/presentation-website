@@ -14,21 +14,20 @@
             </a>
             <nav class="header__nav">
                 <ul class="header__list">
-                    <li class="header__link">Обо мне</li>
-                    <li class="header__link">Как я работаю</li>
-                    <li class="header__link">Кейсы / опыт</li>
-                    <li class="header__link">Контакты</li>
+                    <li class="header__link" data-target="section1">Обо мне</li>
+                    <li class="header__link" data-target="section2">Как я работаю</li>
+                    <li class="header__link" data-target="section3">Кейсы / опыт</li>
+                    <li class="header__link" data-target="section4">Контакты</li>
                 </ul>
             </nav>
-            <button class="header__button">Заполнить форму</button>
+            <button class="header__button" data-target="section4">
+                Заполнить форму
+            </button>
         </div>
     </header>
     <div class="bg"></div>
     <main>
-        <section class="promo">
-            
-        </section>
-        <section class="about">
+        <section class="about" id="section1">
             <div class="container">
                 <div class="about__stack">
                     <h2 class="about__heading">Стек технологий</h2>
@@ -94,7 +93,7 @@
                 </div>
             </div>
         </section>
-        <section class="work">
+        <section class="work" id="section2">
             <div class="container work__flex">
                 <h2 class="work__heading">Как я работаю</h2>
                 <div class="work__block">
@@ -121,22 +120,118 @@
                 </div>
             </div>
         </section>
-        <section class="cases">
+        <section class="cases" id="section3">
             <div class="container">
                 <h2 class="cases__heading">Кейсы / опыт</h2>
+                <div class="cases__box">
+                    <div href="https://ivbvgroup.ru" class="cases__item">
+                        <a class="cases__link-flagman" href="https://ya-santehnika.ru/" target="_blank">
+                            Флагманский кейс
+                        </a>
+                        <img class="cases__img-flagman" src="/img/cases1.jpg" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title-flagman">Сайт на CMS 1C-Битрикс</h3>
+                            <hr>
+                            <h4 class="cases__subtitle-flagman">Ключевые визуальные изменения:</h4>
+                            <ul class="cases__list-flagman">
+                                <li class="cases__element-flagman">Новая верстка шапки и подвала сайта;</li>
+                                <li class="cases__element-flagman">Новая верстка главной страницы;</li>
+                                <li class="cases__element-flagman">
+                                    <a class="cases__href-flagman" href="https://ya-santehnika.ru/test/catalog.php" target="_blank">
+                                        Новая верстка каталога (на боевой сайт еще не размещена);
+                                    </a>
+                                </li>
+                                <li class="cases__element-flagman">
+                                    <a class="cases__href-flagman" href="https://ya-santehnika.ru/test/" target="_blank">
+                                        Новая верстка для мобильного фильтра (на боевой сайт еще не размещена);
+                                    </a>
+                                </li>
+                                <li class="cases__element-flagman">Новая верстка карточки простых товаров и торговых предложений;</li>
+                            </ul>
+                            <hr>
+                            <h4 class="cases__subtitle-flagman">Прочее:</h4>
+                            <p class="cases__text-flagman">
+                                Настройка фильтров, парсинг данных на сайте поставщиков, написание PHP скриптов,
+                                изменения логики поиска товаров, настройка корректного отображения свойств в карточке товаров,
+                                изменение страницы покупателям, отказ от шаблонов "Intec Universe", верстка новых форм,
+                                настройка отправки уведоблений в чат бот Телеграма при оформлении заказа и другое...
+                            </p>
+                        </div>
+                    </div>
+                    <a href="https://ivbvgroup.ru" class="cases__item" target="_blank">
+                        <img class="cases__img" src="/img/cases2.png" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title">Сайт на WordPress</h3>
+                            <p class="cases__text">
+                                Исправления адаптива на главной странице, 
+                                верстка нового блока "Наши статьи" на главной странице,
+                                верстка страницы "Статьи", верстка каждой статьи, 
+                                добавление новых разделов в шапке и подвале сайта, 
+                                верстка новой форм.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://kubts.ru" class="cases__item" target="_blank">
+                        <img class="cases__img" src="/img/cases3.png" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title">Сайт на CMS Битрикс</h3>
+                            <p class="cases__text">
+                                Правка форм, верстка формы "Обратная связь" на странице "Контакты", 
+                                верстка каталога на странице "Магазин документов", верстка страницы товаров из каталога "Магазин документов", 
+                                правка мобильной верстки.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://city-tash.ru/izdeliya/" class="cases__item" target="_blank">
+                        <img class="cases__img" src="/img/cases4.png" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title">Сайт на CMS Битрикс</h3>
+                            <p class="cases__text">
+                                Добавление изделий, верстка подробной карточки изделий, добавление слайдеров.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://tenggys.github.io/Final-certification-GB/" class="cases__item" target="_blank">
+                        <img class="cases__img" src="/img/cases5.png" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title">Сайт на Vue2 без адаптива</h3>
+                            <p class="cases__text">
+                                Старый PET-проект во ремя обучения на фреймворке Vue.
+                                Верстка по макету, использования vue-x, vue-router, настройка пагинации.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://tenggys.github.io/Final-certification-GB/" class="cases__item" target="_blank">
+                        <img class="cases__img" src="/img/cases6.png" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title">PET-проект</h3>
+                            <p class="cases__text">
+                                Верстка по макету, реализация добавления товаров в корзину. 
+                                Основной стек технология: SCSS, HTML, JS, JSON.
+                            </p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/tenggys/vue3-sneakers" class="cases__item" target="_blank">
+                        <img class="cases__img" src="/img/cases7.png" alt="case">
+                        <div class="cases__content">
+                            <h3 class="cases__title">PET-проект на Vue3</h3>
+                            <p class="cases__text">
+                                Верстка c применением Tailwind CSS.
+                                Реализация добавления товара в корзину и в "Закладки".
+                                Использовал "mokky.dev" для имитации бэкенда.
+                            </p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
-        <section class="contacts">
-            <div class="container contacts__flex">
-
-            </div>
-        </section>
-        <section class="contacts">
+        <section class="contacts" id="section4">
             <div class="container">
-                <h2 class="contacts__heading">Контакты</h2>
+                <h2 class="contacts__heading">Обратная связь</h2>
                 <div class="contacts__box">
                     <div class="contacts__left">
                         <img class="contacts__img" src="/img/logo.jpg" alt="logo">
+                        <h3 class="contacts__title">Контакты</h3>
                         <hr>
                         <div class="contacts__content">
                             <a class="contacts__link" target="_blank" href="https://vk.com/gysteng">
@@ -196,7 +291,7 @@
                             <button class="contacts__button" type="submit">
                                 Отправить сообщение
                             </button>
-                            <p class="contacts__text">Заранее спасибо за обращение</p>
+                            <p class="contacts__message">Заранее спасибо за обращение</p>
                         </form>
                     </div>
                 </div>
@@ -208,9 +303,9 @@
             <div class="footer__block footer__block-left">
                 <h3 class="footer__title">Навигация</h3>
                 <ul class="footer__list">
-                    <li>Обо мне</li>
-                    <li>Как я работаю</li>
-                    <li>Кейсы / опыт</li>
+                    <li data-target="section1">Обо мне</li>
+                    <li data-target="section2">Как я работаю</li>
+                    <li data-target="section3">Кейсы / опыт</li>
                 </ul>
             </div>
             <div class="footer__block">
