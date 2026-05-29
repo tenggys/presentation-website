@@ -1,12 +1,14 @@
-require('dotenv').config();
-
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
+const path = require('path');
+
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 
 // Настройка отправки писем через яндекс
 const transporter = nodemailer.createTransport({
@@ -31,7 +33,6 @@ app.post('/send', async (req, res) => {
         // Письмо владельцу
         await transporter.sendMail({
             from: '"Форма обратной связи" <levgood21@yandex.ru>',
-            sender: 'levgood21@yandex.ru',
             to: 'levgood21@yandex.ru',
             subject: `Новое сообщение от ${name}`,
             text: `Имя: ${name}\nТелефон: ${phone}\nEmail: ${email}\nСообщение: ${comment}`
@@ -42,7 +43,6 @@ app.post('/send', async (req, res) => {
         // Копия пользователю
         await transporter.sendMail({
             from: '"Юрий Гуляев" <levgood21@yandex.ru>',
-            sender: 'levgood21@yandex.ru',
             to: email,
             subject: 'Копия вашего сообщения',
             text: `Здравствуйте, ${name}!\n\nМы получили ваше сообщение:\n${comment}\n\nС уважением,\nЮрий Гуляев`
@@ -57,6 +57,11 @@ app.post('/send', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Сервер запущен на http://localhost:3000');
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.listen(PORT, () => {
+    console.log(`Сервер запущен на порту ${PORT}`);
 });
