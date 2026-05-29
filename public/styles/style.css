@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ button {
 }
 
 .bg {
-  background-image: url(/img/bg.jpg);
+  background-image: url(../img/bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,7 +46,6 @@ button {
 
 .header {
   padding: 20px 0;
-  margin-bottom: 60px;
 }
 .header__flex {
   display: flex;
@@ -486,6 +486,7 @@ button {
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  position: relative;
 }
 .contacts__field label {
   font-weight: 400;
@@ -555,7 +556,7 @@ button {
 
 .footer {
   padding: 60px 0;
-  background-image: url(/img/footer-bg.png);
+  background-image: url(../img/footer-bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -606,4 +607,76 @@ button {
 }
 .footer__link:hover {
   color: #4369e7;
+}
+
+/* Стили для ошибок в форме*/
+.field-error {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: red;
+  position: absolute;
+  bottom: -20px;
+}
+
+.contacts__field input.error,
+.contacts__field textarea.error {
+  border-color: #ef4444;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cases__item {
+    max-width: calc(50% - 15px);
+    width: calc(50% - 15px);
+    flex-basis: calc(50% - 15px);
+  }
+}
+@media (max-width: 767.98px) {
+  .container {
+    padding: 0 18px;
+  }
+  .header__flex {
+    flex-wrap: wrap;
+  }
+  .header__logo {
+    order: 1;
+  }
+  .header__button {
+    order: 2;
+  }
+  .header__nav {
+    order: 3;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .header__list {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .about__item {
+    width: 100%;
+    max-width: 100%;
+  }
+  .about__list--experience, .about__list--direction {
+    width: 100%;
+  }
+  .work__block {
+    width: 100%;
+  }
+  .cases__item {
+    max-width: 100%;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .cases__img-flagman {
+    height: 340px;
+  }
+  .contacts__box {
+    flex-direction: column;
+  }
+  .contacts__right {
+    width: 100%;
+    max-width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

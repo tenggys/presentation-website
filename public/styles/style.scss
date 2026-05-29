@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'mixins';
 
+
 * {
     margin: 0;
     padding: 0;
@@ -34,7 +35,7 @@ button {
 }
 
 .bg {
-    background-image: url(/img/bg.jpg);
+    background-image: url(../img/bg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,7 +49,6 @@ button {
 
 .header {
     padding: 20px 0;
-    margin-bottom: $marginBlock;
 
     &__flex {
         @include flex-between;
@@ -465,6 +465,7 @@ button {
         flex-direction: column;
         gap: 10px;
         width: 100%;
+        position: relative;
 
         label {
             @include text(400, 18px, 100%, $textWhite);
@@ -529,7 +530,7 @@ button {
 
 .footer {
     padding: 60px 0;
-    background-image: url(/img/footer-bg.png);
+    background-image: url(../img/footer-bg.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -579,3 +580,16 @@ button {
         }
     }
 }
+
+/* Стили для ошибок в форме*/
+.field-error {
+    @include text(400, 14px, 100%, red);
+    position: absolute;
+    bottom: -20px;
+}
+.contacts__field input.error,
+.contacts__field textarea.error {
+    border-color: #ef4444;
+}
+
+@import 'mediaMob';
