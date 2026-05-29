@@ -1,0 +1,11 @@
+meta:
+  environment: node
+  tool: node
+  version: 20
+
+build:
+  command: npm install
+
+run:
+  command: npm start
+  port: 3000
