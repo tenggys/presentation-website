@@ -1,6 +1,5 @@
 meta:
-  environment: node
-  tool: node
+  toolchain: node
   version: 20
 
 build:
