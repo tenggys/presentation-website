@@ -1,6 +1,6 @@
 meta:
   toolchain: node
-  version: 20
+  version: "20"
 
 build:
   command: npm install
